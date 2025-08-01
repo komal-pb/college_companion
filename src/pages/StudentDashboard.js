@@ -23,7 +23,7 @@ export default function StudentDashboard() {
     const fetchAttendance = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/attendance/${studentName}`
+          `https://college-attendance-cifd.onrender.com/api/attendance/${studentName}`
         );
         const data = await res.json();
         setAttendanceData(data || {});

@@ -13,7 +13,7 @@ export default function TeacherDashboard() {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/students");
+        const res = await fetch("https://college-attendance-cifd.onrender.com/api/students");
         const data = await res.json();
         const formatted = data.map((student, index) => ({
           id: index + 1,            // internal id for UI
@@ -31,7 +31,7 @@ export default function TeacherDashboard() {
   useEffect(() => {
   const fetchTeacher = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/teacher/${teacherId}`);
+      const res = await fetch(`https://college-attendance-cifd.onrender.com/api/teacher/${teacherId}`);
       const data = await res.json();
       if (res.ok) {
         setTeacherName(data.name);
@@ -73,7 +73,7 @@ export default function TeacherDashboard() {
     }));
 
     try {
-      const res = await fetch("http://localhost:5000/api/attendance", {
+      const res = await fetch("https://college-attendance-cifd.onrender.com/api/attendance", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
